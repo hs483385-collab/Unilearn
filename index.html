@@ -1283,113 +1283,3392 @@ class QuestionManager {
 }
 
 // ==========================================
-// 3. 單字字典服務 (DictionaryService)
+// 3. 完整離線單字字典服務 (DictionaryService - 收錄全部 30 篇 844 個不重複字彙)
 // ==========================================
 class DictionaryService {
     constructor() {
         this.dict = {
-            recycling: { pos: "名詞", trans: "資源回收；循環再利用" },
-            essential: { pos: "形容詞", trans: "不可或缺的；極重要的" },
-            habit: { pos: "名詞", trans: "習慣" },
-            modern: { pos: "形容詞", trans: "現代的" },
-            cities: { pos: "名詞", trans: "城市（city 的複數）" },
-            plastic: { pos: "名詞/形容詞", trans: "塑膠；塑膠製的" },
-            bottles: { pos: "名詞", trans: "瓶子（bottle 的複數）" },
-            aluminum: { pos: "名詞", trans: "鋁" },
-            cans: { pos: "名詞", trans: "罐子（can 的複數）" },
-            paper: { pos: "名詞", trans: "紙張" },
-            boxes: { pos: "名詞", trans: "箱子；盒子（box 的複數）" },
-            thrown: { pos: "動詞", trans: "丟棄（throw 的過去分詞）" },
-            process: { pos: "動詞/名詞", trans: "處理；過程" },
-            materials: { pos: "名詞", trans: "材料；物質" },
-            properly: { pos: "副詞", trans: "適當地；正確地" },
-            landfills: { pos: "名詞", trans: "垃圾掩埋場" },
-            pollute: { pos: "動詞", trans: "污染" },
-            oceans: { pos: "名詞", trans: "海洋" },
-            causing: { pos: "動詞", trans: "造成；引起" },
-            severe: { pos: "形容詞", trans: "嚴重的；劇烈的" },
-            damage: { pos: "名詞/動詞", trans: "損害；傷害" },
-            marine: { pos: "形容詞", trans: "海洋的" },
-            animals: { pos: "名詞", trans: "動物" },
-            encourage: { pos: "動詞", trans: "鼓勵" },
-            students: { pos: "名詞", trans: "學生" },
-            sort: { pos: "動詞/名詞", trans: "分類；種類" },
-            trash: { pos: "名詞", trans: "垃圾" },
-            different: { pos: "形容詞", trans: "不同的" },
-            bins: { pos: "名詞", trans: "垃圾桶；箱子" },
-            reusing: { pos: "動詞", trans: "重複使用" },
-            resources: { pos: "名詞", trans: "資源" },
-            reduce: { pos: "動詞", trans: "減少；降低" },
-            waste: { pos: "名詞/動詞", trans: "浪費；廢棄物" },
-            save: { pos: "動詞", trans: "節省；拯救" },
-            energy: { pos: "名詞", trans: "能源；精力" },
-            products: { pos: "名詞", trans: "產品" },
-            simple: { pos: "形容詞", trans: "簡單的" },
-            actions: { pos: "名詞", trans: "行動；行為" },
-            water: { pos: "名詞", trans: "水" },
-            huge: { pos: "形容詞", trans: "巨大的" },
-            difference: { pos: "名詞", trans: "差異；影響" },
-            earth: { pos: "名詞", trans: "地球；土地" },
-            honeybees: { pos: "名詞", trans: "蜜蜂" },
-            insects: { pos: "名詞", trans: "昆蟲" },
-            vital: { pos: "形容詞", trans: "至關重要的" },
-            role: { pos: "名詞", trans: "角色；作用" },
-            nature: { pos: "名詞", trans: "大自然；天性" },
-            gathering: { pos: "動詞", trans: "採集；聚集" },
-            nectar: { pos: "名詞", trans: "花蜜" },
-            pollen: { pos: "名詞", trans: "花粉" },
-            pollination: { pos: "名詞", trans: "授粉" },
-            fruits: { pos: "名詞", trans: "水果；果實" },
-            seeds: { pos: "名詞", trans: "種子" },
-            depends: { pos: "動詞", trans: "依賴；取決於" },
-            unfortunately: { pos: "副詞", trans: "不幸地" },
-            populations: { pos: "名詞", trans: "族群數量；人口" },
-            decreasing: { pos: "動詞", trans: "減少；下降" },
-            habitat: { pos: "名詞", trans: "棲息地" },
-            climate: { pos: "名詞", trans: "氣候" },
-            protecting: { pos: "動詞", trans: "保護" },
-            maintaining: { pos: "動詞", trans: "維持；保養" },
-            ecosystem: { pos: "名詞", trans: "生態系統" },
-            securing: { pos: "動詞", trans: "確保；保護" },
-            supply: { pos: "名詞/動詞", trans: "供應；補給" },
-            exercise: { pos: "名詞/動詞", trans: "運動；鍛鍊" },
-            transform: { pos: "動詞", trans: "改變；轉變" },
-            jogging: { pos: "名詞", trans: "慢跑" },
-            stretching: { pos: "名詞", trans: "伸展運動" },
-            bicycle: { pos: "名詞", trans: "自行車；腳踏車" },
-            boosts: { pos: "動詞", trans: "促進；提升" },
-            circulation: { pos: "名詞", trans: "循環；流通" },
-            awakens: { pos: "動詞", trans: "喚醒" },
-            releases: { pos: "動詞", trans: "釋放；發布" },
-            endorphins: { pos: "名詞", trans: "腦內啡" },
-            improve: { pos: "動詞", trans: "改善；進步" },
-            mood: { pos: "名詞", trans: "情緒；心情" },
-            stress: { pos: "名詞", trans: "壓力" },
-            routine: { pos: "名詞", trans: "常規；日常習慣" },
-            quality: { pos: "名詞", trans: "品質；素質" },
-            healthy: { pos: "形容詞", trans: "健康的" },
-            "one-third": { pos: "名詞/代名詞", trans: "三分之一" },
-            "emission-free": { pos: "形容詞", trans: "零排放的" },
-            "single-use": { pos: "形容詞", trans: "一次性的" },
-            "last-minute": { pos: "形容詞", trans: "最後一刻的；臨時抱佛腳的" },
-            "long-term": { pos: "形容詞", trans: "長期的" },
-            germany: { pos: "專有名詞", trans: "德國" },
-            mars: { pos: "專有名詞", trans: "火星" },
-            jupiter: { pos: "專有名詞", trans: "木星" },
-            saturn: { pos: "專有名詞", trans: "土星" },
-            athens: { pos: "專有名詞", trans: "雅典" },
-            edison: { pos: "專有名詞", trans: "愛迪生" },
-            known: { pos: "動詞", trans: "被稱為；為人所知（know 的過去分詞）" },
-            held: { pos: "動詞", trans: "舉辦；握住（hold 的過去式/分詞）" },
-            found: { pos: "動詞", trans: "發現（find 的過去式/分詞）" },
-            fed: { pos: "動詞", trans: "餵食（feed 的過去式/分詞）" },
-            berries: { pos: "名詞", trans: "漿果（berry 的複數）" },
-            ceremonies: { pos: "名詞", trans: "儀式；典禮（ceremony 的複數）" }
-        };
+            "a": {
+                        "pos": "冠詞",
+                        "trans": "一個；一種"
+            },
+            "abdomens": {
+                        "pos": "名詞",
+                        "trans": "腹部（abdomen 的複數）"
+            },
+            "ability": {
+                        "pos": "名詞",
+                        "trans": "能力；才能"
+            },
+            "about": {
+                        "pos": "介系詞/副詞",
+                        "trans": "關於；大約"
+            },
+            "absorb": {
+                        "pos": "動詞",
+                        "trans": "吸收"
+            },
+            "academic": {
+                        "pos": "形容詞",
+                        "trans": "學業的；學術的"
+            },
+            "access": {
+                        "pos": "動詞/名詞",
+                        "trans": "獲取；存取；管道"
+            },
+            "accessible": {
+                        "pos": "形容詞",
+                        "trans": "容易取得的；可接近的"
+            },
+            "achieve": {
+                        "pos": "動詞",
+                        "trans": "達成；實現"
+            },
+            "across": {
+                        "pos": "介系詞/副詞",
+                        "trans": "橫跨；遍及"
+            },
+            "actions": {
+                        "pos": "名詞",
+                        "trans": "行動；行為（action 的複數）"
+            },
+            "added": {
+                        "pos": "動詞",
+                        "trans": "增加；加上（add 的過去式）"
+            },
+            "adolescents": {
+                        "pos": "名詞",
+                        "trans": "青少年（adolescent 的複數）"
+            },
+            "advanced": {
+                        "pos": "動詞/形容詞",
+                        "trans": "進步；先進的"
+            },
+            "after": {
+                        "pos": "介系詞/連接詞",
+                        "trans": "在……之後"
+            },
+            "afternoon": {
+                        "pos": "名詞",
+                        "trans": "下午"
+            },
+            "against": {
+                        "pos": "介系詞",
+                        "trans": "對抗；抵禦；反對"
+            },
+            "ago": {
+                        "pos": "副詞",
+                        "trans": "以前"
+            },
+            "ai": {
+                        "pos": "名詞",
+                        "trans": "人工智慧（Artificial Intelligence 縮寫）"
+            },
+            "algorithms": {
+                        "pos": "名詞",
+                        "trans": "演算法（algorithm 的複數）"
+            },
+            "all": {
+                        "pos": "形容詞/代名詞",
+                        "trans": "所有的；全部"
+            },
+            "allow": {
+                        "pos": "動詞",
+                        "trans": "允許；讓"
+            },
+            "allows": {
+                        "pos": "動詞",
+                        "trans": "允許；使能夠（allow 的第三人稱單數）"
+            },
+            "also": {
+                        "pos": "副詞",
+                        "trans": "也；同樣地"
+            },
+            "alternatives": {
+                        "pos": "名詞",
+                        "trans": "替代方案；選擇（alternative 的複數）"
+            },
+            "alters": {
+                        "pos": "動詞",
+                        "trans": "改變（alter 的第三人稱單數）"
+            },
+            "although": {
+                        "pos": "連接詞",
+                        "trans": "雖然；儘管"
+            },
+            "aluminum": {
+                        "pos": "名詞",
+                        "trans": "鋁"
+            },
+            "america": {
+                        "pos": "專有名詞",
+                        "trans": "美洲；美國"
+            },
+            "amounts": {
+                        "pos": "名詞",
+                        "trans": "數量；總額（amount 的複數）"
+            },
+            "an": {
+                        "pos": "冠詞",
+                        "trans": "一個（用於母音開頭字前）"
+            },
+            "analyze": {
+                        "pos": "動詞",
+                        "trans": "分析"
+            },
+            "ancient": {
+                        "pos": "形容詞",
+                        "trans": "古代的；古老的"
+            },
+            "and": {
+                        "pos": "連接詞",
+                        "trans": "和；與；以及"
+            },
+            "animal": {
+                        "pos": "名詞",
+                        "trans": "動物"
+            },
+            "animals": {
+                        "pos": "名詞",
+                        "trans": "動物（animal 的複數）"
+            },
+            "annually": {
+                        "pos": "副詞",
+                        "trans": "每年地"
+            },
+            "antibodies": {
+                        "pos": "名詞",
+                        "trans": "抗體（antibody 的複數）"
+            },
+            "ants": {
+                        "pos": "名詞",
+                        "trans": "螞蟻（ant 的複數）"
+            },
+            "apparel": {
+                        "pos": "名詞",
+                        "trans": "服裝；衣著"
+            },
+            "architectural": {
+                        "pos": "形容詞",
+                        "trans": "建築的；建築學上的"
+            },
+            "are": {
+                        "pos": "動詞",
+                        "trans": "是（be 動詞複數及第二人稱現在式）"
+            },
+            "arid": {
+                        "pos": "形容詞",
+                        "trans": "乾旱的；乾燥的"
+            },
+            "arizona": {
+                        "pos": "專有名詞",
+                        "trans": "亞利桑那州（美國州名）"
+            },
+            "around": {
+                        "pos": "介系詞/副詞",
+                        "trans": "圍繞；在……周圍"
+            },
+            "arpanet": {
+                        "pos": "專有名詞",
+                        "trans": "阿帕網（網際網路的前身）"
+            },
+            "artificial": {
+                        "pos": "形容詞",
+                        "trans": "人工的；人造的"
+            },
+            "artwork": {
+                        "pos": "名詞",
+                        "trans": "藝術作品"
+            },
+            "as": {
+                        "pos": "介系詞/連接詞",
+                        "trans": "作為；當……時；如同"
+            },
+            "asia": {
+                        "pos": "專有名詞",
+                        "trans": "亞洲"
+            },
+            "asleep": {
+                        "pos": "形容詞",
+                        "trans": "睡著的"
+            },
+            "assignments": {
+                        "pos": "名詞",
+                        "trans": "作業；任務（assignment 的複數）"
+            },
+            "astonishing": {
+                        "pos": "形容詞",
+                        "trans": "令人驚嘆的；驚人的"
+            },
+            "astronomers": {
+                        "pos": "名詞",
+                        "trans": "天文學家（astronomer 的複數）"
+            },
+            "at": {
+                        "pos": "介系詞",
+                        "trans": "在（某時間或地點）"
+            },
+            "athens": {
+                        "pos": "專有名詞",
+                        "trans": "雅典（希臘首都）"
+            },
+            "athletes": {
+                        "pos": "名詞",
+                        "trans": "運動員（athlete 的複數）"
+            },
+            "athletic": {
+                        "pos": "形容詞",
+                        "trans": "體育的；運動的"
+            },
+            "atmosphere": {
+                        "pos": "名詞",
+                        "trans": "大氣層；氣氛"
+            },
+            "atmospheres": {
+                        "pos": "名詞",
+                        "trans": "大氣層（atmosphere 的複數）"
+            },
+            "attracting": {
+                        "pos": "動詞",
+                        "trans": "吸引（attract 的現在分詞）"
+            },
+            "aurora": {
+                        "pos": "名詞",
+                        "trans": "極光"
+            },
+            "australia": {
+                        "pos": "專有名詞",
+                        "trans": "澳洲"
+            },
+            "avoiding": {
+                        "pos": "動詞",
+                        "trans": "避免（avoid 的動名詞/現在分詞）"
+            },
+            "awakens": {
+                        "pos": "動詞",
+                        "trans": "喚醒（awaken 的第三人稱單數）"
+            },
+            "away": {
+                        "pos": "副詞",
+                        "trans": "離開；丟棄"
+            },
+            "aztecs": {
+                        "pos": "專有名詞",
+                        "trans": "阿茲特克人"
+            },
+            "back": {
+                        "pos": "副詞/名詞",
+                        "trans": "向後；回到；背部"
+            },
+            "bacteria": {
+                        "pos": "名詞",
+                        "trans": "細菌（bacterium 的複數）"
+            },
+            "bags": {
+                        "pos": "名詞",
+                        "trans": "袋子（bag 的複數）"
+            },
+            "balance": {
+                        "pos": "名詞/動詞",
+                        "trans": "平衡"
+            },
+            "banning": {
+                        "pos": "動詞",
+                        "trans": "禁止（ban 的動名詞/現在分詞）"
+            },
+            "barrier": {
+                        "pos": "名詞",
+                        "trans": "障礙；屏障"
+            },
+            "beans": {
+                        "pos": "名詞",
+                        "trans": "豆子（bean 的複數）"
+            },
+            "become": {
+                        "pos": "動詞",
+                        "trans": "成為；變得"
+            },
+            "becoming": {
+                        "pos": "動詞",
+                        "trans": "變得（become 的現在分詞）"
+            },
+            "bedtime": {
+                        "pos": "名詞",
+                        "trans": "就寢時間；睡前"
+            },
+            "bee": {
+                        "pos": "名詞",
+                        "trans": "蜜蜂"
+            },
+            "bees": {
+                        "pos": "名詞",
+                        "trans": "蜜蜂（bee 的複數）"
+            },
+            "before": {
+                        "pos": "介系詞/連接詞",
+                        "trans": "在……之前"
+            },
+            "being": {
+                        "pos": "動詞",
+                        "trans": "被；成為（be 的現在分詞）"
+            },
+            "beloved": {
+                        "pos": "形容詞",
+                        "trans": "心愛的；深受喜愛的"
+            },
+            "benefits": {
+                        "pos": "名詞",
+                        "trans": "益處；好處（benefit 的複數）"
+            },
+            "berners-lee": {
+                        "pos": "專有名詞",
+                        "trans": "柏內茲-李（全球資訊網發明人）"
+            },
+            "berries": {
+                        "pos": "名詞",
+                        "trans": "漿果（berry 的複數）"
+            },
+            "beverage": {
+                        "pos": "名詞",
+                        "trans": "飲料"
+            },
+            "beverages": {
+                        "pos": "名詞",
+                        "trans": "飲料（beverage 的複數）"
+            },
+            "bicycle": {
+                        "pos": "名詞",
+                        "trans": "自行車；腳踏車"
+            },
+            "bicycles": {
+                        "pos": "名詞",
+                        "trans": "自行車（bicycle 的複數）"
+            },
+            "billions": {
+                        "pos": "名詞/數詞",
+                        "trans": "數十億"
+            },
+            "bins": {
+                        "pos": "名詞",
+                        "trans": "垃圾桶；箱子（bin 的複數）"
+            },
+            "bioengineers": {
+                        "pos": "名詞",
+                        "trans": "生物工程師（bioengineer 的複數）"
+            },
+            "birds": {
+                        "pos": "名詞",
+                        "trans": "鳥類（bird 的複數）"
+            },
+            "bitter": {
+                        "pos": "形容詞",
+                        "trans": "苦的；苦澀的"
+            },
+            "black": {
+                        "pos": "形容詞",
+                        "trans": "黑色的（black tea 指紅茶）"
+            },
+            "bleaching": {
+                        "pos": "名詞/動詞",
+                        "trans": "白化；漂白"
+            },
+            "blockages": {
+                        "pos": "名詞",
+                        "trans": "阻塞（blockage 的複數）"
+            },
+            "blood": {
+                        "pos": "名詞",
+                        "trans": "血液"
+            },
+            "bodies": {
+                        "pos": "名詞",
+                        "trans": "身體（body 的複數）"
+            },
+            "body": {
+                        "pos": "名詞",
+                        "trans": "身體；軀體"
+            },
+            "books": {
+                        "pos": "名詞",
+                        "trans": "書籍（book 的複數）"
+            },
+            "boosts": {
+                        "pos": "動詞",
+                        "trans": "促進；提升（boost 的第三人稱單數）"
+            },
+            "borders": {
+                        "pos": "名詞",
+                        "trans": "邊境；邊界（border 的複數）"
+            },
+            "borealis": {
+                        "pos": "專有名詞",
+                        "trans": "北方的（Aurora Borealis 指北極光）"
+            },
+            "bottle": {
+                        "pos": "名詞",
+                        "trans": "瓶子"
+            },
+            "bottles": {
+                        "pos": "名詞",
+                        "trans": "瓶子（bottle 的複數）"
+            },
+            "boxes": {
+                        "pos": "名詞",
+                        "trans": "箱子；盒子（box 的複數）"
+            },
+            "brain": {
+                        "pos": "名詞",
+                        "trans": "大腦"
+            },
+            "brain's": {
+                        "pos": "名詞所有格",
+                        "trans": "大腦的"
+            },
+            "branches": {
+                        "pos": "名詞",
+                        "trans": "分支；樹枝（branch 的複數）"
+            },
+            "break": {
+                        "pos": "動詞",
+                        "trans": "打破；分解"
+            },
+            "breakfast": {
+                        "pos": "名詞",
+                        "trans": "早餐"
+            },
+            "breaking": {
+                        "pos": "動詞",
+                        "trans": "分解；打破（break 的現在分詞）"
+            },
+            "breaks": {
+                        "pos": "名詞/動詞",
+                        "trans": "休息；打破（break 的複數/單三）"
+            },
+            "breathtaking": {
+                        "pos": "形容詞",
+                        "trans": "令人屏息的；驚人的"
+            },
+            "brewed": {
+                        "pos": "動詞",
+                        "trans": "沖泡；釀造（brew 的過去分詞）"
+            },
+            "brick": {
+                        "pos": "名詞",
+                        "trans": "磚塊"
+            },
+            "bringing": {
+                        "pos": "動詞",
+                        "trans": "攜帶；帶來（bring 的動名詞）"
+            },
+            "brings": {
+                        "pos": "動詞",
+                        "trans": "帶來；匯集（bring 的第三人稱單數）"
+            },
+            "british": {
+                        "pos": "形容詞",
+                        "trans": "英國的"
+            },
+            "built": {
+                        "pos": "動詞",
+                        "trans": "建造（build 的過去式/過去分詞）"
+            },
+            "burned": {
+                        "pos": "動詞",
+                        "trans": "燃燒（burn 的過去分詞）"
+            },
+            "bush": {
+                        "pos": "名詞",
+                        "trans": "灌木叢"
+            },
+            "but": {
+                        "pos": "連接詞",
+                        "trans": "但是；然而"
+            },
+            "butterflies": {
+                        "pos": "名詞",
+                        "trans": "蝴蝶（butterfly 的複數）"
+            },
+            "by": {
+                        "pos": "介系詞",
+                        "trans": "藉由；透過；被"
+            },
+            "cacao": {
+                        "pos": "名詞",
+                        "trans": "可可（樹/豆）"
+            },
+            "caffeine": {
+                        "pos": "名詞",
+                        "trans": "咖啡因"
+            },
+            "calendars": {
+                        "pos": "名詞",
+                        "trans": "行事曆；日曆（calendar 的複數）"
+            },
+            "called": {
+                        "pos": "動詞",
+                        "trans": "被稱為；叫做（call 的過去分詞）"
+            },
+            "camellia": {
+                        "pos": "專有名詞",
+                        "trans": "山茶屬（Camellia sinensis 為茶樹學名）"
+            },
+            "can": {
+                        "pos": "助動詞/名詞",
+                        "trans": "能夠；可以；罐子"
+            },
+            "cans": {
+                        "pos": "名詞",
+                        "trans": "罐子；鋁罐（can 的複數）"
+            },
+            "canyon": {
+                        "pos": "名詞",
+                        "trans": "峽谷"
+            },
+            "capable": {
+                        "pos": "形容詞",
+                        "trans": "有能力的；能夠的"
+            },
+            "carbon": {
+                        "pos": "名詞",
+                        "trans": "碳"
+            },
+            "carved": {
+                        "pos": "動詞",
+                        "trans": "雕刻；切割（carve 的過去分詞）"
+            },
+            "caused": {
+                        "pos": "動詞",
+                        "trans": "引起；造成（cause 的過去分詞）"
+            },
+            "causes": {
+                        "pos": "動詞",
+                        "trans": "導致；造成（cause 的第三人稱單數）"
+            },
+            "causing": {
+                        "pos": "動詞",
+                        "trans": "造成；引起（cause 的現在分詞）"
+            },
+            "centuries": {
+                        "pos": "名詞",
+                        "trans": "世紀；數百年（century 的複數）"
+            },
+            "century": {
+                        "pos": "名詞",
+                        "trans": "世紀（一百年）"
+            },
+            "ceremonies": {
+                        "pos": "名詞",
+                        "trans": "儀式；典禮（ceremony 的複數）"
+            },
+            "certain": {
+                        "pos": "形容詞",
+                        "trans": "某些；特定的"
+            },
+            "chains": {
+                        "pos": "名詞",
+                        "trans": "鏈條（chain 的複數）"
+            },
+            "change": {
+                        "pos": "名詞/動詞",
+                        "trans": "改變；變遷"
+            },
+            "charged": {
+                        "pos": "形容詞/動詞",
+                        "trans": "帶電的；充電的"
+            },
+            "chemicals": {
+                        "pos": "名詞",
+                        "trans": "化學物質（chemical 的複數）"
+            },
+            "china": {
+                        "pos": "專有名詞",
+                        "trans": "中國"
+            },
+            "chocolate": {
+                        "pos": "名詞",
+                        "trans": "巧克力"
+            },
+            "chronic": {
+                        "pos": "形容詞",
+                        "trans": "慢性的；長期的"
+            },
+            "circulation": {
+                        "pos": "名詞",
+                        "trans": "循環；流通"
+            },
+            "cities": {
+                        "pos": "名詞",
+                        "trans": "城市（city 的複數）"
+            },
+            "civilizations": {
+                        "pos": "名詞",
+                        "trans": "文明（civilization 的複數）"
+            },
+            "clean": {
+                        "pos": "形容詞/動詞",
+                        "trans": "乾淨的；清潔的"
+            },
+            "climate": {
+                        "pos": "名詞",
+                        "trans": "氣候"
+            },
+            "clothing": {
+                        "pos": "名詞",
+                        "trans": "服裝；衣物"
+            },
+            "coal": {
+                        "pos": "名詞",
+                        "trans": "煤炭"
+            },
+            "coast": {
+                        "pos": "名詞",
+                        "trans": "海岸"
+            },
+            "coffee": {
+                        "pos": "名詞",
+                        "trans": "咖啡"
+            },
+            "cognitive": {
+                        "pos": "形容詞",
+                        "trans": "認知的"
+            },
+            "collide": {
+                        "pos": "動詞",
+                        "trans": "碰撞；相撞"
+            },
+            "colorado": {
+                        "pos": "專有名詞",
+                        "trans": "科羅拉多（河/州名）"
+            },
+            "colorful": {
+                        "pos": "形容詞",
+                        "trans": "色彩繽紛的"
+            },
+            "combating": {
+                        "pos": "動詞",
+                        "trans": "對抗；戰鬥（combat 的動名詞）"
+            },
+            "come": {
+                        "pos": "動詞",
+                        "trans": "來；來自"
+            },
+            "commercial": {
+                        "pos": "形容詞",
+                        "trans": "商業的；商用的"
+            },
+            "communicate": {
+                        "pos": "動詞",
+                        "trans": "溝通；交流"
+            },
+            "commuting": {
+                        "pos": "名詞/動詞",
+                        "trans": "通勤"
+            },
+            "competition": {
+                        "pos": "名詞",
+                        "trans": "競賽；競爭"
+            },
+            "complex": {
+                        "pos": "形容詞",
+                        "trans": "複雜的"
+            },
+            "compounds": {
+                        "pos": "名詞",
+                        "trans": "化合物（compound 的複數）"
+            },
+            "concentration": {
+                        "pos": "名詞",
+                        "trans": "專注力；集中"
+            },
+            "concrete": {
+                        "pos": "名詞/形容詞",
+                        "trans": "混凝土；水泥的"
+            },
+            "conditions": {
+                        "pos": "名詞",
+                        "trans": "狀況；疾病；條件（condition 的複數）"
+            },
+            "connections": {
+                        "pos": "名詞",
+                        "trans": "連結；聯繫（connection 的複數）"
+            },
+            "consists": {
+                        "pos": "動詞",
+                        "trans": "由……組成（consist 的第三人稱單數）"
+            },
+            "constructed": {
+                        "pos": "動詞",
+                        "trans": "建造（construct 的過去分詞）"
+            },
+            "construction": {
+                        "pos": "名詞",
+                        "trans": "建造；建築"
+            },
+            "consume": {
+                        "pos": "動詞",
+                        "trans": "消耗；飲用"
+            },
+            "consumed": {
+                        "pos": "動詞",
+                        "trans": "飲用；消耗（consume 的過去分詞）"
+            },
+            "contains": {
+                        "pos": "動詞",
+                        "trans": "含有；包含（contain 的第三人稱單數）"
+            },
+            "contributed": {
+                        "pos": "動詞",
+                        "trans": "貢獻；參與（contribute 的過去式）"
+            },
+            "convenient": {
+                        "pos": "形容詞",
+                        "trans": "方便的；便利的"
+            },
+            "convert": {
+                        "pos": "動詞",
+                        "trans": "轉換；轉化"
+            },
+            "coral": {
+                        "pos": "名詞/形容詞",
+                        "trans": "珊瑚；珊瑚的"
+            },
+            "corals": {
+                        "pos": "名詞",
+                        "trans": "珊瑚（coral 的複數）"
+            },
+            "cover": {
+                        "pos": "動詞/名詞",
+                        "trans": "覆蓋；涵蓋"
+            },
+            "cramming": {
+                        "pos": "名詞/動詞",
+                        "trans": "臨時抱佛腳；死記硬背"
+            },
+            "create": {
+                        "pos": "動詞",
+                        "trans": "創造；建立"
+            },
+            "creating": {
+                        "pos": "動詞",
+                        "trans": "製造；形成（create 的現在分詞）"
+            },
+            "creation": {
+                        "pos": "名詞",
+                        "trans": "創造；發明"
+            },
+            "creative": {
+                        "pos": "形容詞",
+                        "trans": "創意的；有創造力的"
+            },
+            "creatures": {
+                        "pos": "名詞",
+                        "trans": "生物（creature 的複數）"
+            },
+            "critical": {
+                        "pos": "形容詞",
+                        "trans": "關鍵的；批判性的"
+            },
+            "cultures": {
+                        "pos": "名詞",
+                        "trans": "文化（culture 的複數）"
+            },
+            "currency": {
+                        "pos": "名詞",
+                        "trans": "貨幣"
+            },
+            "cycles": {
+                        "pos": "名詞",
+                        "trans": "週期；循環（cycle 的複數）"
+            },
+            "cycling": {
+                        "pos": "名詞/動詞",
+                        "trans": "騎自行車"
+            },
+            "daily": {
+                        "pos": "形容詞/副詞",
+                        "trans": "每日的；日常的"
+            },
+            "damage": {
+                        "pos": "名詞/動詞",
+                        "trans": "損害；破壞"
+            },
+            "damaged": {
+                        "pos": "形容詞/動詞",
+                        "trans": "受損的（damage 的過去分詞）"
+            },
+            "dangerous": {
+                        "pos": "形容詞",
+                        "trans": "危險的"
+            },
+            "datasets": {
+                        "pos": "名詞",
+                        "trans": "數據集；資料集（dataset 的複數）"
+            },
+            "day": {
+                        "pos": "名詞",
+                        "trans": "天；一日"
+            },
+            "days": {
+                        "pos": "名詞",
+                        "trans": "天；數日（day 的複數）"
+            },
+            "decades": {
+                        "pos": "名詞",
+                        "trans": "數十年（decade 的複數）"
+            },
+            "decreasing": {
+                        "pos": "動詞",
+                        "trans": "減少；下降（decrease 的現在分詞）"
+            },
+            "deep": {
+                        "pos": "形容詞",
+                        "trans": "深的；深層的"
+            },
+            "defend": {
+                        "pos": "動詞",
+                        "trans": "保衛；防禦"
+            },
+            "dense": {
+                        "pos": "形容詞",
+                        "trans": "茂密的；濃密的"
+            },
+            "depends": {
+                        "pos": "動詞",
+                        "trans": "依賴；取決於（depend 的第三人稱單數）"
+            },
+            "deprivation": {
+                        "pos": "名詞",
+                        "trans": "缺乏；剝奪（sleep deprivation 指睡眠不足）"
+            },
+            "despite": {
+                        "pos": "介系詞",
+                        "trans": "儘管；雖然"
+            },
+            "developed": {
+                        "pos": "動詞",
+                        "trans": "開發；發展（develop 的過去分詞）"
+            },
+            "development": {
+                        "pos": "名詞",
+                        "trans": "發展；發育"
+            },
+            "diagnose": {
+                        "pos": "動詞",
+                        "trans": "診斷"
+            },
+            "differ": {
+                        "pos": "動詞",
+                        "trans": "不同；有差異"
+            },
+            "difference": {
+                        "pos": "名詞",
+                        "trans": "差異；影響"
+            },
+            "different": {
+                        "pos": "形容詞",
+                        "trans": "不同的"
+            },
+            "digest": {
+                        "pos": "動詞",
+                        "trans": "分解；消化"
+            },
+            "digital": {
+                        "pos": "形容詞",
+                        "trans": "數位的"
+            },
+            "dioxide": {
+                        "pos": "名詞",
+                        "trans": "二氧化物（carbon dioxide 指二氧化碳）"
+            },
+            "discovered": {
+                        "pos": "動詞",
+                        "trans": "發現（discover 的過去分詞）"
+            },
+            "discoveries": {
+                        "pos": "名詞",
+                        "trans": "發現（discovery 的複數）"
+            },
+            "disorder": {
+                        "pos": "名詞",
+                        "trans": "失調；障礙"
+            },
+            "displays": {
+                        "pos": "名詞/動詞",
+                        "trans": "展示；奇觀；顯示"
+            },
+            "distant": {
+                        "pos": "形容詞",
+                        "trans": "遙遠的"
+            },
+            "distractions": {
+                        "pos": "名詞",
+                        "trans": "干擾；分心的事物（distraction 的複數）"
+            },
+            "do": {
+                        "pos": "助動詞/動詞",
+                        "trans": "做；助動詞"
+            },
+            "down": {
+                        "pos": "副詞/介系詞",
+                        "trans": "向下；分解"
+            },
+            "drink": {
+                        "pos": "名詞/動詞",
+                        "trans": "飲料；喝"
+            },
+            "dry": {
+                        "pos": "形容詞",
+                        "trans": "乾燥的；乾旱的"
+            },
+            "due": {
+                        "pos": "形容詞",
+                        "trans": "由於（due to 因為）"
+            },
+            "dump": {
+                        "pos": "動詞",
+                        "trans": "傾倒；丟棄"
+            },
+            "during": {
+                        "pos": "介系詞",
+                        "trans": "在……期間"
+            },
+            "dying": {
+                        "pos": "形容詞/動詞",
+                        "trans": "瀕危的；垂死的"
+            },
+            "dynasties": {
+                        "pos": "名詞",
+                        "trans": "朝代（dynasty 的複數）"
+            },
+            "early": {
+                        "pos": "形容詞/副詞",
+                        "trans": "早期的；早地"
+            },
+            "earth": {
+                        "pos": "名詞",
+                        "trans": "地球；泥土"
+            },
+            "earth's": {
+                        "pos": "名詞所有格",
+                        "trans": "地球的"
+            },
+            "eat": {
+                        "pos": "動詞",
+                        "trans": "吃"
+            },
+            "eating": {
+                        "pos": "動詞",
+                        "trans": "吃（eat 的動名詞/現在分詞）"
+            },
+            "ecological": {
+                        "pos": "形容詞",
+                        "trans": "生態的"
+            },
+            "ecosystem": {
+                        "pos": "名詞",
+                        "trans": "生態系統"
+            },
+            "edison": {
+                        "pos": "專有名詞",
+                        "trans": "愛迪生（著名發明家）"
+            },
+            "eight": {
+                        "pos": "數詞",
+                        "trans": "八"
+            },
+            "electricity": {
+                        "pos": "名詞",
+                        "trans": "電力；電"
+            },
+            "electronic": {
+                        "pos": "形容詞",
+                        "trans": "電子的"
+            },
+            "emission-free": {
+                        "pos": "形容詞",
+                        "trans": "零排放的"
+            },
+            "emitted": {
+                        "pos": "動詞",
+                        "trans": "發射；排放（emit 的過去分詞）"
+            },
+            "emitting": {
+                        "pos": "動詞",
+                        "trans": "排放；發出（emit 的動名詞）"
+            },
+            "emotional": {
+                        "pos": "形容詞",
+                        "trans": "情感的；情緒的"
+            },
+            "encourage": {
+                        "pos": "動詞",
+                        "trans": "鼓勵"
+            },
+            "end": {
+                        "pos": "動詞/名詞",
+                        "trans": "結束；最終成為"
+            },
+            "endorphins": {
+                        "pos": "名詞",
+                        "trans": "腦內啡（endorphin 的複數）"
+            },
+            "energetic": {
+                        "pos": "形容詞",
+                        "trans": "精力充沛的"
+            },
+            "energy": {
+                        "pos": "名詞",
+                        "trans": "能源；精力"
+            },
+            "enhances": {
+                        "pos": "動詞",
+                        "trans": "增強；提升（enhance 的第三人稱單數）"
+            },
+            "enjoyed": {
+                        "pos": "動詞",
+                        "trans": "喜愛；享受（enjoy 的過去分詞）"
+            },
+            "entire": {
+                        "pos": "形容詞",
+                        "trans": "整個的；全部的"
+            },
+            "environment": {
+                        "pos": "名詞",
+                        "trans": "環境"
+            },
+            "environmental": {
+                        "pos": "形容詞",
+                        "trans": "環境的"
+            },
+            "enzymes": {
+                        "pos": "名詞",
+                        "trans": "酵素；酶（enzyme 的複數）"
+            },
+            "essential": {
+                        "pos": "形容詞",
+                        "trans": "不可或缺的；極重要的"
+            },
+            "establishing": {
+                        "pos": "動詞",
+                        "trans": "建立（establish 的動名詞）"
+            },
+            "ethiopian": {
+                        "pos": "形容詞",
+                        "trans": "衣索比亞的"
+            },
+            "europe": {
+                        "pos": "專有名詞",
+                        "trans": "歐洲"
+            },
+            "even": {
+                        "pos": "副詞",
+                        "trans": "甚至"
+            },
+            "event": {
+                        "pos": "名詞",
+                        "trans": "事件；盛會"
+            },
+            "every": {
+                        "pos": "形容詞",
+                        "trans": "每一個的"
+            },
+            "exercise": {
+                        "pos": "名詞/動詞",
+                        "trans": "運動；鍛鍊"
+            },
+            "expanded": {
+                        "pos": "動詞",
+                        "trans": "擴展；擴大（expand 的過去式）"
+            },
+            "expands": {
+                        "pos": "動詞",
+                        "trans": "擴展；擴充（expand 的第三人稱單數）"
+            },
+            "explore": {
+                        "pos": "動詞",
+                        "trans": "探索；探測"
+            },
+            "extraterrestrial": {
+                        "pos": "形容詞",
+                        "trans": "外星的；地球以外的"
+            },
+            "facilities": {
+                        "pos": "名詞",
+                        "trans": "設施；場所（facility 的複數）"
+            },
+            "fact": {
+                        "pos": "名詞",
+                        "trans": "事實"
+            },
+            "factories": {
+                        "pos": "名詞",
+                        "trans": "工廠（factory 的複數）"
+            },
+            "failed": {
+                        "pos": "動詞",
+                        "trans": "失敗（fail 的過去式）"
+            },
+            "fair": {
+                        "pos": "形容詞",
+                        "trans": "公平的"
+            },
+            "fashion": {
+                        "pos": "名詞",
+                        "trans": "時尚；流行"
+            },
+            "fast": {
+                        "pos": "形容詞/副詞",
+                        "trans": "快速的"
+            },
+            "faster": {
+                        "pos": "形容詞/副詞",
+                        "trans": "更快的（fast 的比較級）"
+            },
+            "fatal": {
+                        "pos": "形容詞",
+                        "trans": "致命的"
+            },
+            "fatigue": {
+                        "pos": "名詞",
+                        "trans": "疲勞；疲倦"
+            },
+            "fed": {
+                        "pos": "動詞",
+                        "trans": "餵食（feed 的過去分詞）"
+            },
+            "feed": {
+                        "pos": "動詞",
+                        "trans": "進食；餵養"
+            },
+            "feet": {
+                        "pos": "名詞",
+                        "trans": "雙腳（foot 的複數）"
+            },
+            "festival": {
+                        "pos": "名詞",
+                        "trans": "節慶；盛會"
+            },
+            "fight": {
+                        "pos": "動詞/名詞",
+                        "trans": "對抗；戰鬥"
+            },
+            "figures": {
+                        "pos": "名詞",
+                        "trans": "人物；數字（figure 的複數）"
+            },
+            "finance": {
+                        "pos": "名詞",
+                        "trans": "金融；財務"
+            },
+            "first": {
+                        "pos": "副詞/序數",
+                        "trans": "首先；第一"
+            },
+            "fish": {
+                        "pos": "名詞",
+                        "trans": "魚；魚類"
+            },
+            "fitness": {
+                        "pos": "名詞",
+                        "trans": "健身；健康"
+            },
+            "fleeting": {
+                        "pos": "形容詞",
+                        "trans": "短暫的；飛逝的"
+            },
+            "floating": {
+                        "pos": "形容詞/動詞",
+                        "trans": "漂浮的"
+            },
+            "flowed": {
+                        "pos": "動詞",
+                        "trans": "流動（flow 的過去式）"
+            },
+            "flower": {
+                        "pos": "名詞",
+                        "trans": "花朵"
+            },
+            "fly": {
+                        "pos": "動詞",
+                        "trans": "飛翔"
+            },
+            "focus": {
+                        "pos": "名詞/動詞",
+                        "trans": "專注力；聚焦"
+            },
+            "food": {
+                        "pos": "名詞",
+                        "trans": "食物；糧食"
+            },
+            "footprints": {
+                        "pos": "名詞",
+                        "trans": "足跡（carbon footprints 指碳足跡）"
+            },
+            "for": {
+                        "pos": "介系詞",
+                        "trans": "為了；對於；持續"
+            },
+            "force": {
+                        "pos": "名詞",
+                        "trans": "力量；風力"
+            },
+            "forests": {
+                        "pos": "名詞",
+                        "trans": "森林（forest 的複數）"
+            },
+            "forming": {
+                        "pos": "動詞",
+                        "trans": "形成（form 的動名詞）"
+            },
+            "forward": {
+                        "pos": "副詞",
+                        "trans": "向前"
+            },
+            "fossil": {
+                        "pos": "名詞/形容詞",
+                        "trans": "化石（fossil fuels 指化石燃料）"
+            },
+            "foster": {
+                        "pos": "動詞",
+                        "trans": "促進；培養"
+            },
+            "found": {
+                        "pos": "動詞",
+                        "trans": "發現；位於（find 的過去式/分詞）"
+            },
+            "four": {
+                        "pos": "數詞",
+                        "trans": "四"
+            },
+            "fragments": {
+                        "pos": "名詞",
+                        "trans": "碎片（fragment 的複數）"
+            },
+            "friendship": {
+                        "pos": "名詞",
+                        "trans": "友誼"
+            },
+            "from": {
+                        "pos": "介系詞",
+                        "trans": "從；來自"
+            },
+            "fruits": {
+                        "pos": "名詞",
+                        "trans": "果實；水果（fruit 的複數）"
+            },
+            "fuels": {
+                        "pos": "名詞",
+                        "trans": "燃料（fuel 的複數）"
+            },
+            "furthermore": {
+                        "pos": "副詞",
+                        "trans": "此外；而且"
+            },
+            "games": {
+                        "pos": "名詞",
+                        "trans": "運動會；比賽（game 的複數）"
+            },
+            "garbage": {
+                        "pos": "名詞",
+                        "trans": "垃圾"
+            },
+            "gardening": {
+                        "pos": "名詞",
+                        "trans": "園藝；培育"
+            },
+            "gardens": {
+                        "pos": "名詞",
+                        "trans": "花園（garden 的複數）"
+            },
+            "gas": {
+                        "pos": "名詞",
+                        "trans": "氣體；天然氣"
+            },
+            "gases": {
+                        "pos": "名詞",
+                        "trans": "氣體（gas 的複數）"
+            },
+            "gathering": {
+                        "pos": "動詞",
+                        "trans": "採集；聚集（gather 的現在分詞）"
+            },
+            "generate": {
+                        "pos": "動詞",
+                        "trans": "產生；發電"
+            },
+            "geological": {
+                        "pos": "形容詞",
+                        "trans": "地質的"
+            },
+            "germany": {
+                        "pos": "專有名詞",
+                        "trans": "德國"
+            },
+            "giants": {
+                        "pos": "名詞",
+                        "trans": "巨行星；巨人（giant 的複數）"
+            },
+            "global": {
+                        "pos": "形容詞",
+                        "trans": "全球的"
+            },
+            "globe": {
+                        "pos": "名詞",
+                        "trans": "地球；全球"
+            },
+            "goals": {
+                        "pos": "名詞",
+                        "trans": "目標（goal 的複數）"
+            },
+            "goat": {
+                        "pos": "名詞",
+                        "trans": "山羊"
+            },
+            "goats": {
+                        "pos": "名詞",
+                        "trans": "山羊（goat 的複數）"
+            },
+            "grand": {
+                        "pos": "形容詞",
+                        "trans": "宏偉的；壯麗的"
+            },
+            "grapes": {
+                        "pos": "名詞",
+                        "trans": "葡萄（grape 的複數）"
+            },
+            "great": {
+                        "pos": "形容詞",
+                        "trans": "偉大的；巨大的"
+            },
+            "greece": {
+                        "pos": "專有名詞",
+                        "trans": "希臘"
+            },
+            "green": {
+                        "pos": "形容詞",
+                        "trans": "綠色的；環保的"
+            },
+            "grit": {
+                        "pos": "名詞",
+                        "trans": "恆毅力；堅毅"
+            },
+            "ground": {
+                        "pos": "名詞/動詞",
+                        "trans": "地面；磨碎（grind 的過去分詞）"
+            },
+            "grown": {
+                        "pos": "動詞",
+                        "trans": "培育；生長（grow 的過去分詞）"
+            },
+            "habit": {
+                        "pos": "名詞",
+                        "trans": "習慣"
+            },
+            "habitat": {
+                        "pos": "名詞",
+                        "trans": "棲息地"
+            },
+            "had": {
+                        "pos": "動詞",
+                        "trans": "有（have 的過去式）"
+            },
+            "half": {
+                        "pos": "名詞/代名詞",
+                        "trans": "一半"
+            },
+            "harness": {
+                        "pos": "動詞",
+                        "trans": "利用；駕馭"
+            },
+            "has": {
+                        "pos": "動詞/助動詞",
+                        "trans": "有；已經（have 的第三人稱單數）"
+            },
+            "have": {
+                        "pos": "動詞/助動詞",
+                        "trans": "有；已經"
+            },
+            "health": {
+                        "pos": "名詞",
+                        "trans": "健康"
+            },
+            "healthcare": {
+                        "pos": "名詞",
+                        "trans": "醫療保健"
+            },
+            "healthy": {
+                        "pos": "形容詞",
+                        "trans": "健康的"
+            },
+            "heart": {
+                        "pos": "名詞",
+                        "trans": "心臟"
+            },
+            "held": {
+                        "pos": "動詞",
+                        "trans": "舉辦（hold 的過去分詞）"
+            },
+            "help": {
+                        "pos": "動詞/名詞",
+                        "trans": "幫助"
+            },
+            "helping": {
+                        "pos": "動詞",
+                        "trans": "幫助（help 的現在分詞）"
+            },
+            "helps": {
+                        "pos": "動詞",
+                        "trans": "幫助（help 的第三人稱單數）"
+            },
+            "herbs": {
+                        "pos": "名詞",
+                        "trans": "藥草；香草（herb 的複數）"
+            },
+            "herder": {
+                        "pos": "名詞",
+                        "trans": "牧人；放牧者"
+            },
+            "heritage": {
+                        "pos": "名詞",
+                        "trans": "遺產；傳統"
+            },
+            "high-latitude": {
+                        "pos": "形容詞",
+                        "trans": "高緯度的"
+            },
+            "his": {
+                        "pos": "代名詞",
+                        "trans": "他的"
+            },
+            "historical": {
+                        "pos": "形容詞",
+                        "trans": "歷史的；歷史上的"
+            },
+            "history": {
+                        "pos": "名詞",
+                        "trans": "歷史"
+            },
+            "honey": {
+                        "pos": "名詞",
+                        "trans": "蜂蜜"
+            },
+            "honeybees": {
+                        "pos": "名詞",
+                        "trans": "蜜蜂（honeybee 的複數）"
+            },
+            "honoring": {
+                        "pos": "動詞",
+                        "trans": "向……致敬（honor 的現在分詞）"
+            },
+            "hormone": {
+                        "pos": "名詞",
+                        "trans": "荷爾蒙；激素"
+            },
+            "hours": {
+                        "pos": "名詞",
+                        "trans": "小時（hour 的複數）"
+            },
+            "house": {
+                        "pos": "動詞/名詞",
+                        "trans": "容納；棲息；房屋"
+            },
+            "how": {
+                        "pos": "副詞",
+                        "trans": "如何；怎樣"
+            },
+            "huge": {
+                        "pos": "形容詞",
+                        "trans": "巨大的"
+            },
+            "human": {
+                        "pos": "形容詞/名詞",
+                        "trans": "人類的；人類"
+            },
+            "humans": {
+                        "pos": "名詞",
+                        "trans": "人類（human 的複數）"
+            },
+            "hydroelectric": {
+                        "pos": "形容詞",
+                        "trans": "水力發電的"
+            },
+            "ice": {
+                        "pos": "名詞",
+                        "trans": "冰"
+            },
+            "if": {
+                        "pos": "連接詞",
+                        "trans": "如果；假如"
+            },
+            "illness": {
+                        "pos": "名詞",
+                        "trans": "疾病"
+            },
+            "immense": {
+                        "pos": "形容詞",
+                        "trans": "巨大的；極大的"
+            },
+            "immersing": {
+                        "pos": "動詞",
+                        "trans": "沉浸（immerse 的動名詞）"
+            },
+            "immune": {
+                        "pos": "形容詞",
+                        "trans": "免疫的"
+            },
+            "immunity": {
+                        "pos": "名詞",
+                        "trans": "免疫力"
+            },
+            "important": {
+                        "pos": "形容詞",
+                        "trans": "重要的"
+            },
+            "improve": {
+                        "pos": "動詞",
+                        "trans": "改善；提升"
+            },
+            "in": {
+                        "pos": "介系詞",
+                        "trans": "在……裡面；在（某時期/地點）"
+            },
+            "inactive": {
+                        "pos": "形容詞",
+                        "trans": "不活躍的；去活性的"
+            },
+            "including": {
+                        "pos": "介系詞",
+                        "trans": "包含；包括"
+            },
+            "incredible": {
+                        "pos": "形容詞",
+                        "trans": "驚人的；難以置信的"
+            },
+            "independence": {
+                        "pos": "名詞",
+                        "trans": "獨立；自主"
+            },
+            "individuals": {
+                        "pos": "名詞",
+                        "trans": "個人；個體（individual 的複數）"
+            },
+            "industries": {
+                        "pos": "名詞",
+                        "trans": "產業；工業（industry 的複數）"
+            },
+            "industry": {
+                        "pos": "名詞",
+                        "trans": "產業；工業"
+            },
+            "inexpensive": {
+                        "pos": "形容詞",
+                        "trans": "便宜的；不昂貴的"
+            },
+            "infections": {
+                        "pos": "名詞",
+                        "trans": "感染（infection 的複數）"
+            },
+            "influencing": {
+                        "pos": "動詞",
+                        "trans": "影響（influence 的現在分詞）"
+            },
+            "information": {
+                        "pos": "名詞",
+                        "trans": "資訊；情報"
+            },
+            "initially": {
+                        "pos": "副詞",
+                        "trans": "最初；起初"
+            },
+            "initiatives": {
+                        "pos": "名詞",
+                        "trans": "倡議；新方案（initiative 的複數）"
+            },
+            "inner": {
+                        "pos": "形容詞",
+                        "trans": "內部的；內側的"
+            },
+            "innovative": {
+                        "pos": "形容詞",
+                        "trans": "創新的"
+            },
+            "insects": {
+                        "pos": "名詞",
+                        "trans": "昆蟲（insect 的複數）"
+            },
+            "instrument": {
+                        "pos": "名詞",
+                        "trans": "樂器；儀器"
+            },
+            "intelligence": {
+                        "pos": "名詞",
+                        "trans": "智慧；智力"
+            },
+            "international": {
+                        "pos": "形容詞",
+                        "trans": "國際的"
+            },
+            "internet": {
+                        "pos": "名詞",
+                        "trans": "網際網路"
+            },
+            "into": {
+                        "pos": "介系詞",
+                        "trans": "進入；變成"
+            },
+            "intriguing": {
+                        "pos": "形容詞",
+                        "trans": "引人入勝的；有趣的"
+            },
+            "introducing": {
+                        "pos": "動詞",
+                        "trans": "引入；介紹（introduce 的動名詞）"
+            },
+            "invasions": {
+                        "pos": "名詞",
+                        "trans": "入侵（invasion 的複數）"
+            },
+            "invented": {
+                        "pos": "動詞",
+                        "trans": "發明（invent 的過去式/分詞）"
+            },
+            "inventing": {
+                        "pos": "動詞",
+                        "trans": "發明（invent 的動名詞）"
+            },
+            "inventions": {
+                        "pos": "名詞",
+                        "trans": "發明物（invention 的複數）"
+            },
+            "inventors": {
+                        "pos": "名詞",
+                        "trans": "發明家（inventor 的複數）"
+            },
+            "involves": {
+                        "pos": "動詞",
+                        "trans": "包含；涉及（involve 的第三人稱單數）"
+            },
+            "is": {
+                        "pos": "動詞",
+                        "trans": "是（be 動詞第三人稱單數現在式）"
+            },
+            "it": {
+                        "pos": "代名詞",
+                        "trans": "它"
+            },
+            "its": {
+                        "pos": "代名詞",
+                        "trans": "它的"
+            },
+            "itself": {
+                        "pos": "代名詞",
+                        "trans": "它自己；本身"
+            },
+            "japanese": {
+                        "pos": "形容詞",
+                        "trans": "日本的"
+            },
+            "jellyfish": {
+                        "pos": "名詞",
+                        "trans": "水母"
+            },
+            "jogging": {
+                        "pos": "名詞",
+                        "trans": "慢跑"
+            },
+            "jupiter": {
+                        "pos": "專有名詞",
+                        "trans": "木星"
+            },
+            "keep": {
+                        "pos": "動詞",
+                        "trans": "保持；維持"
+            },
+            "key": {
+                        "pos": "形容詞/名詞",
+                        "trans": "關鍵的；鑰匙"
+            },
+            "kilometers": {
+                        "pos": "名詞",
+                        "trans": "公里（kilometer 的複數）"
+            },
+            "known": {
+                        "pos": "動詞",
+                        "trans": "被稱為；為人所知（know 的過去分詞）"
+            },
+            "land": {
+                        "pos": "名詞",
+                        "trans": "陸地；土地"
+            },
+            "landfills": {
+                        "pos": "名詞",
+                        "trans": "垃圾掩埋場（landfill 的複數）"
+            },
+            "language": {
+                        "pos": "名詞",
+                        "trans": "語言"
+            },
+            "languages": {
+                        "pos": "名詞",
+                        "trans": "語言（language 的複數）"
+            },
+            "largest": {
+                        "pos": "形容詞",
+                        "trans": "最大的（large 的最高級）"
+            },
+            "last-minute": {
+                        "pos": "形容詞",
+                        "trans": "最後一刻的；臨時抱佛腳的"
+            },
+            "late": {
+                        "pos": "形容詞/副詞",
+                        "trans": "晚期的；末期的"
+            },
+            "later": {
+                        "pos": "副詞",
+                        "trans": "後來；之後"
+            },
+            "layers": {
+                        "pos": "名詞",
+                        "trans": "岩層；層次（layer 的複數）"
+            },
+            "lead": {
+                        "pos": "動詞",
+                        "trans": "導致（lead to 引起）"
+            },
+            "leak": {
+                        "pos": "動詞",
+                        "trans": "滲漏；流入"
+            },
+            "learn": {
+                        "pos": "動詞",
+                        "trans": "學習"
+            },
+            "learning": {
+                        "pos": "名詞/動詞",
+                        "trans": "學習"
+            },
+            "legend": {
+                        "pos": "名詞",
+                        "trans": "傳說"
+            },
+            "levels": {
+                        "pos": "名詞",
+                        "trans": "水平；程度（level 的複數）"
+            },
+            "life": {
+                        "pos": "名詞",
+                        "trans": "生命；生活"
+            },
+            "light": {
+                        "pos": "形容詞/名詞",
+                        "trans": "輕度的；光線"
+            },
+            "lightbulb": {
+                        "pos": "名詞",
+                        "trans": "電燈泡"
+            },
+            "lights": {
+                        "pos": "名詞",
+                        "trans": "光；極光（light 的複數）"
+            },
+            "like": {
+                        "pos": "介系詞/動詞",
+                        "trans": "像；例如；喜歡"
+            },
+            "limited": {
+                        "pos": "形容詞",
+                        "trans": "有限的"
+            },
+            "liquid": {
+                        "pos": "形容詞/名詞",
+                        "trans": "液態的；液體"
+            },
+            "living": {
+                        "pos": "形容詞",
+                        "trans": "活著的；活體的"
+            },
+            "located": {
+                        "pos": "形容詞/動詞",
+                        "trans": "位於"
+            },
+            "long-term": {
+                        "pos": "形容詞",
+                        "trans": "長期的"
+            },
+            "loss": {
+                        "pos": "名詞",
+                        "trans": "喪失；損失"
+            },
+            "lower": {
+                        "pos": "動詞/形容詞",
+                        "trans": "降低；較低的"
+            },
+            "lungs": {
+                        "pos": "名詞",
+                        "trans": "肺（lung 的複數）"
+            },
+            "made": {
+                        "pos": "動詞",
+                        "trans": "製造；由……組成（make 的過去分詞）"
+            },
+            "main": {
+                        "pos": "形容詞",
+                        "trans": "主要的"
+            },
+            "maintaining": {
+                        "pos": "動詞",
+                        "trans": "維持；保養（maintain 的動名詞）"
+            },
+            "make": {
+                        "pos": "動詞",
+                        "trans": "製造；使成為"
+            },
+            "makes": {
+                        "pos": "動詞",
+                        "trans": "使變得（make 的第三人稱單數）"
+            },
+            "making": {
+                        "pos": "動詞",
+                        "trans": "使變得；製造（make 的現在分詞）"
+            },
+            "manageable": {
+                        "pos": "形容詞",
+                        "trans": "可管理的；易於處理的"
+            },
+            "management": {
+                        "pos": "名詞",
+                        "trans": "管理"
+            },
+            "many": {
+                        "pos": "形容詞",
+                        "trans": "許多的"
+            },
+            "marine": {
+                        "pos": "形容詞",
+                        "trans": "海洋的"
+            },
+            "mars": {
+                        "pos": "專有名詞",
+                        "trans": "火星"
+            },
+            "massive": {
+                        "pos": "形容詞",
+                        "trans": "巨大的；龐大的"
+            },
+            "mastering": {
+                        "pos": "動詞",
+                        "trans": "掌握；精通（master 的動名詞）"
+            },
+            "match": {
+                        "pos": "動詞",
+                        "trans": "配合；趕上"
+            },
+            "materials": {
+                        "pos": "名詞",
+                        "trans": "材料；物質（material 的複數）"
+            },
+            "mayans": {
+                        "pos": "專有名詞",
+                        "trans": "馬雅人"
+            },
+            "medical": {
+                        "pos": "形容詞",
+                        "trans": "醫療的；醫學的"
+            },
+            "medicinal": {
+                        "pos": "形容詞",
+                        "trans": "藥用的；有療效的"
+            },
+            "melatonin": {
+                        "pos": "名詞",
+                        "trans": "褪黑激素"
+            },
+            "memories": {
+                        "pos": "名詞",
+                        "trans": "記憶（memory 的複數）"
+            },
+            "mental": {
+                        "pos": "形容詞",
+                        "trans": "心理的；精神的"
+            },
+            "mercury": {
+                        "pos": "專有名詞",
+                        "trans": "水星"
+            },
+            "mesoamerican": {
+                        "pos": "形容詞",
+                        "trans": "中美洲的"
+            },
+            "metal": {
+                        "pos": "名詞",
+                        "trans": "金屬"
+            },
+            "method": {
+                        "pos": "名詞",
+                        "trans": "方法"
+            },
+            "micro-habitats": {
+                        "pos": "名詞",
+                        "trans": "微型棲息地（micro-habitat 的複數）"
+            },
+            "migratory": {
+                        "pos": "形容詞",
+                        "trans": "遷徙的；候鳥的"
+            },
+            "military": {
+                        "pos": "形容詞",
+                        "trans": "軍事的"
+            },
+            "million": {
+                        "pos": "數詞/名詞",
+                        "trans": "百萬"
+            },
+            "millions": {
+                        "pos": "名詞/數詞",
+                        "trans": "數百萬"
+            },
+            "mind": {
+                        "pos": "名詞",
+                        "trans": "大腦；心智"
+            },
+            "minutes": {
+                        "pos": "名詞",
+                        "trans": "分鐘（minute 的複數）"
+            },
+            "mistake": {
+                        "pos": "動詞/名詞",
+                        "trans": "誤認；錯誤"
+            },
+            "modern": {
+                        "pos": "形容詞",
+                        "trans": "現代的"
+            },
+            "monument": {
+                        "pos": "名詞",
+                        "trans": "奇觀；紀念碑"
+            },
+            "mood": {
+                        "pos": "名詞",
+                        "trans": "情緒；心情"
+            },
+            "more": {
+                        "pos": "副詞/形容詞",
+                        "trans": "更多；更加"
+            },
+            "morning": {
+                        "pos": "名詞",
+                        "trans": "早晨；上午"
+            },
+            "most": {
+                        "pos": "副詞/形容詞",
+                        "trans": "最；大多數"
+            },
+            "mostly": {
+                        "pos": "副詞",
+                        "trans": "主要地；大多"
+            },
+            "musical": {
+                        "pos": "形容詞",
+                        "trans": "音樂的"
+            },
+            "nations": {
+                        "pos": "名詞",
+                        "trans": "國家（nation 的複數）"
+            },
+            "natural": {
+                        "pos": "形容詞",
+                        "trans": "天然的；自然的"
+            },
+            "nature": {
+                        "pos": "名詞",
+                        "trans": "大自然"
+            },
+            "near": {
+                        "pos": "介系詞",
+                        "trans": "在……附近"
+            },
+            "nectar": {
+                        "pos": "名詞",
+                        "trans": "花蜜"
+            },
+            "needed": {
+                        "pos": "動詞",
+                        "trans": "需要（need 的過去分詞）"
+            },
+            "neptune": {
+                        "pos": "專有名詞",
+                        "trans": "海王星"
+            },
+            "network": {
+                        "pos": "名詞",
+                        "trans": "網路"
+            },
+            "neural": {
+                        "pos": "形容詞",
+                        "trans": "神經的"
+            },
+            "new": {
+                        "pos": "形容詞",
+                        "trans": "新的"
+            },
+            "night": {
+                        "pos": "名詞",
+                        "trans": "夜晚"
+            },
+            "no": {
+                        "pos": "形容詞/副詞",
+                        "trans": "沒有；不"
+            },
+            "non-fiction": {
+                        "pos": "名詞",
+                        "trans": "非小說類（文學/讀物）"
+            },
+            "non-rem": {
+                        "pos": "形容詞",
+                        "trans": "非快速動眼期的"
+            },
+            "north": {
+                        "pos": "名詞/形容詞",
+                        "trans": "北方；北部的"
+            },
+            "northern": {
+                        "pos": "形容詞",
+                        "trans": "北方的；北部的"
+            },
+            "not": {
+                        "pos": "副詞",
+                        "trans": "不；沒有"
+            },
+            "noticed": {
+                        "pos": "動詞",
+                        "trans": "注意到（notice 的過去式）"
+            },
+            "novels": {
+                        "pos": "名詞",
+                        "trans": "小說（novel 的複數）"
+            },
+            "now": {
+                        "pos": "副詞",
+                        "trans": "現在；如今"
+            },
+            "nurseries": {
+                        "pos": "名詞",
+                        "trans": "苗圃；培育場（nursery 的複數）"
+            },
+            "obstacles": {
+                        "pos": "名詞",
+                        "trans": "障礙；困難（obstacle 的複數）"
+            },
+            "occurring": {
+                        "pos": "動詞",
+                        "trans": "發生（occur 的現在分詞）"
+            },
+            "occurs": {
+                        "pos": "動詞",
+                        "trans": "發生（occur 的第三人稱單數）"
+            },
+            "oceans": {
+                        "pos": "名詞",
+                        "trans": "海洋（ocean 的複數）"
+            },
+            "of": {
+                        "pos": "介系詞",
+                        "trans": "……的"
+            },
+            "off": {
+                        "pos": "介系詞/副詞",
+                        "trans": "在……外海；離開"
+            },
+            "offer": {
+                        "pos": "動詞",
+                        "trans": "提供"
+            },
+            "often": {
+                        "pos": "副詞",
+                        "trans": "經常；常常"
+            },
+            "oil": {
+                        "pos": "名詞",
+                        "trans": "石油；油"
+            },
+            "olympic": {
+                        "pos": "形容詞",
+                        "trans": "奧林匹克的"
+            },
+            "on": {
+                        "pos": "介系詞",
+                        "trans": "在……上面"
+            },
+            "once": {
+                        "pos": "副詞",
+                        "trans": "曾經；一次"
+            },
+            "one": {
+                        "pos": "數詞/代名詞",
+                        "trans": "一；一個"
+            },
+            "one-third": {
+                        "pos": "名詞/代名詞",
+                        "trans": "三分之一"
+            },
+            "oneself": {
+                        "pos": "代名詞",
+                        "trans": "自己"
+            },
+            "only": {
+                        "pos": "副詞/形容詞",
+                        "trans": "僅僅；唯一的"
+            },
+            "onto": {
+                        "pos": "介系詞",
+                        "trans": "到……之上"
+            },
+            "oolong": {
+                        "pos": "名詞",
+                        "trans": "烏龍茶"
+            },
+            "optimal": {
+                        "pos": "形容詞",
+                        "trans": "最佳的；最理想的"
+            },
+            "or": {
+                        "pos": "連接詞",
+                        "trans": "或者；還是"
+            },
+            "organic": {
+                        "pos": "形容詞",
+                        "trans": "有機的"
+            },
+            "originally": {
+                        "pos": "副詞",
+                        "trans": "最初；原本"
+            },
+            "originated": {
+                        "pos": "動詞",
+                        "trans": "起源於（originate 的過去式）"
+            },
+            "originating": {
+                        "pos": "動詞",
+                        "trans": "起源於（originate 的現在分詞）"
+            },
+            "our": {
+                        "pos": "代名詞",
+                        "trans": "我們的"
+            },
+            "over": {
+                        "pos": "介系詞/副詞",
+                        "trans": "超過；歷經"
+            },
+            "overall": {
+                        "pos": "形容詞",
+                        "trans": "整體的；全面的"
+            },
+            "own": {
+                        "pos": "形容詞/動詞",
+                        "trans": "自己的；擁有"
+            },
+            "oxidation": {
+                        "pos": "名詞",
+                        "trans": "氧化；發酵"
+            },
+            "oxygen": {
+                        "pos": "名詞",
+                        "trans": "氧氣"
+            },
+            "panels": {
+                        "pos": "名詞",
+                        "trans": "面板（solar panels 指太陽能板）"
+            },
+            "paper": {
+                        "pos": "名詞",
+                        "trans": "紙張"
+            },
+            "parks": {
+                        "pos": "名詞",
+                        "trans": "公園（park 的複數）"
+            },
+            "particles": {
+                        "pos": "名詞",
+                        "trans": "粒子；微粒（particle 的複數）"
+            },
+            "parts": {
+                        "pos": "名詞",
+                        "trans": "部分（part 的複數）"
+            },
+            "passion": {
+                        "pos": "名詞",
+                        "trans": "熱情"
+            },
+            "patches": {
+                        "pos": "名詞",
+                        "trans": "地帶；區塊（patch 的複數）"
+            },
+            "pathogens": {
+                        "pos": "名詞",
+                        "trans": "病原體（pathogen 的複數）"
+            },
+            "peace": {
+                        "pos": "名詞",
+                        "trans": "和平"
+            },
+            "pedals": {
+                        "pos": "名詞",
+                        "trans": "踏板（pedal 的複數）"
+            },
+            "people": {
+                        "pos": "名詞",
+                        "trans": "人們"
+            },
+            "per": {
+                        "pos": "介系詞",
+                        "trans": "每（per night 指每晚）"
+            },
+            "perform": {
+                        "pos": "動詞",
+                        "trans": "執行；表現"
+            },
+            "perseverance": {
+                        "pos": "名詞",
+                        "trans": "毅力；堅持不懈"
+            },
+            "persistence": {
+                        "pos": "名詞",
+                        "trans": "堅持；執著"
+            },
+            "personal": {
+                        "pos": "形容詞",
+                        "trans": "個人的"
+            },
+            "pet": {
+                        "pos": "名詞",
+                        "trans": "聚對苯二甲酸乙二酯（寶特瓶塑膠材質）"
+            },
+            "phenomenon": {
+                        "pos": "名詞",
+                        "trans": "現象"
+            },
+            "photosynthesis": {
+                        "pos": "名詞",
+                        "trans": "光合作用"
+            },
+            "physical": {
+                        "pos": "形容詞",
+                        "trans": "身體的；物理的"
+            },
+            "physically": {
+                        "pos": "副詞",
+                        "trans": "物理上地；實質地"
+            },
+            "pioneering": {
+                        "pos": "動詞",
+                        "trans": "開創；先驅（pioneer 的現在分詞）"
+            },
+            "planets": {
+                        "pos": "名詞",
+                        "trans": "行星（planet 的複數）"
+            },
+            "planners": {
+                        "pos": "名詞",
+                        "trans": "計畫表；規劃器（planner 的複數）"
+            },
+            "plant": {
+                        "pos": "名詞/動詞",
+                        "trans": "植物；種植"
+            },
+            "plants": {
+                        "pos": "名詞",
+                        "trans": "植物（plant 的複數）"
+            },
+            "plastic": {
+                        "pos": "名詞/形容詞",
+                        "trans": "塑膠；塑膠製的"
+            },
+            "plasticity": {
+                        "pos": "名詞",
+                        "trans": "可塑性"
+            },
+            "plastics": {
+                        "pos": "名詞",
+                        "trans": "塑膠製品（plastic 的複數）"
+            },
+            "play": {
+                        "pos": "動詞/名詞",
+                        "trans": "扮演（play a role 起作用）；玩耍"
+            },
+            "pocket": {
+                        "pos": "名詞/形容詞",
+                        "trans": "袖珍的；口袋"
+            },
+            "polar": {
+                        "pos": "形容詞",
+                        "trans": "極地的"
+            },
+            "pollen": {
+                        "pos": "名詞",
+                        "trans": "花粉"
+            },
+            "pollination": {
+                        "pos": "名詞",
+                        "trans": "授粉"
+            },
+            "pollute": {
+                        "pos": "動詞",
+                        "trans": "污染"
+            },
+            "polymers": {
+                        "pos": "名詞",
+                        "trans": "聚合物（polymer 的複數）"
+            },
+            "poor": {
+                        "pos": "形容詞",
+                        "trans": "差的；貧乏的"
+            },
+            "populations": {
+                        "pos": "名詞",
+                        "trans": "族群數量；人口（population 的複數）"
+            },
+            "power": {
+                        "pos": "名詞",
+                        "trans": "電力；能源；力量"
+            },
+            "powerful": {
+                        "pos": "形容詞",
+                        "trans": "強大的；有效的"
+            },
+            "prevents": {
+                        "pos": "動詞",
+                        "trans": "防止；預防（prevent 的第三人稱單數）"
+            },
+            "prioritizing": {
+                        "pos": "動詞",
+                        "trans": "優先處理（prioritize 的動名詞）"
+            },
+            "process": {
+                        "pos": "動詞/名詞",
+                        "trans": "處理；過程"
+            },
+            "processes": {
+                        "pos": "名詞",
+                        "trans": "過程；程序（process 的複數）"
+            },
+            "procrastination": {
+                        "pos": "名詞",
+                        "trans": "拖延症；拖延"
+            },
+            "produce": {
+                        "pos": "動詞",
+                        "trans": "生產；產生；結出"
+            },
+            "produces": {
+                        "pos": "動詞",
+                        "trans": "生產；製造（produce 的第三人稱單數）"
+            },
+            "products": {
+                        "pos": "名詞",
+                        "trans": "產品（product 的複數）"
+            },
+            "properly": {
+                        "pos": "副詞",
+                        "trans": "適當地；妥善地"
+            },
+            "protecting": {
+                        "pos": "動詞",
+                        "trans": "保護（protect 的動名詞）"
+            },
+            "provides": {
+                        "pos": "動詞",
+                        "trans": "提供（provide 的第三人稱單數）"
+            },
+            "purpose": {
+                        "pos": "名詞",
+                        "trans": "目的；用途"
+            },
+            "push": {
+                        "pos": "動詞",
+                        "trans": "推動；推行"
+            },
+            "pushed": {
+                        "pos": "動詞",
+                        "trans": "推動（push 的過去分詞）"
+            },
+            "quality": {
+                        "pos": "名詞",
+                        "trans": "品質；素質"
+            },
+            "questions": {
+                        "pos": "名詞",
+                        "trans": "問題（question 的複數）"
+            },
+            "rainforests": {
+                        "pos": "名詞",
+                        "trans": "雨林（rainforest 的複數）"
+            },
+            "raising": {
+                        "pos": "動詞",
+                        "trans": "引發；提出（raise 的現在分詞）"
+            },
+            "rammed": {
+                        "pos": "形容詞/動詞",
+                        "trans": "夯實的（rammed earth 指夯土）"
+            },
+            "rapidly": {
+                        "pos": "副詞",
+                        "trans": "迅速地；快速地"
+            },
+            "rather": {
+                        "pos": "副詞",
+                        "trans": "相當（rather than 而不是）"
+            },
+            "reading": {
+                        "pos": "名詞/動詞",
+                        "trans": "閱讀"
+            },
+            "recycling": {
+                        "pos": "名詞/動詞",
+                        "trans": "資源回收；循環再利用"
+            },
+            "red": {
+                        "pos": "形容詞",
+                        "trans": "紅色的"
+            },
+            "reduce": {
+                        "pos": "動詞",
+                        "trans": "減少；降低"
+            },
+            "reef": {
+                        "pos": "名詞",
+                        "trans": "珊瑚礁；礁石"
+            },
+            "reefs": {
+                        "pos": "名詞",
+                        "trans": "珊瑚礁（reef 的複數）"
+            },
+            "refers": {
+                        "pos": "動詞",
+                        "trans": "指的是（refer to 意指）"
+            },
+            "regions": {
+                        "pos": "名詞",
+                        "trans": "地區；區域（region 的複數）"
+            },
+            "regularly": {
+                        "pos": "副詞",
+                        "trans": "定期地；規律地"
+            },
+            "regulates": {
+                        "pos": "動詞",
+                        "trans": "調節；控制（regulate 的第三人稱單數）"
+            },
+            "releases": {
+                        "pos": "動詞",
+                        "trans": "釋放（release 的第三人稱單數）"
+            },
+            "rely": {
+                        "pos": "動詞",
+                        "trans": "依賴；依靠"
+            },
+            "remaining": {
+                        "pos": "動詞",
+                        "trans": "保持；停留（remain 的現在分詞）"
+            },
+            "remarkable": {
+                        "pos": "形容詞",
+                        "trans": "傑出的；非凡的"
+            },
+            "removes": {
+                        "pos": "動詞",
+                        "trans": "清除；移除（remove 的第三人稱單數）"
+            },
+            "renewable": {
+                        "pos": "形容詞",
+                        "trans": "可再生的"
+            },
+            "reorganize": {
+                        "pos": "動詞",
+                        "trans": "重組；重新組織"
+            },
+            "reorganizes": {
+                        "pos": "動詞",
+                        "trans": "重組；整理（reorganize 的第三人稱單數）"
+            },
+            "repairs": {
+                        "pos": "動詞",
+                        "trans": "修復（repair 的第三人稱單數）"
+            },
+            "require": {
+                        "pos": "動詞",
+                        "trans": "需要；要求"
+            },
+            "required": {
+                        "pos": "動詞",
+                        "trans": "所需的（require 的過去分詞）"
+            },
+            "research": {
+                        "pos": "名詞/動詞",
+                        "trans": "研究"
+            },
+            "resources": {
+                        "pos": "名詞",
+                        "trans": "資源（resource 的複數）"
+            },
+            "rest": {
+                        "pos": "動詞/名詞",
+                        "trans": "休息"
+            },
+            "restore": {
+                        "pos": "動詞",
+                        "trans": "復育；恢復"
+            },
+            "reusing": {
+                        "pos": "動詞",
+                        "trans": "重複使用（reuse 的動名詞）"
+            },
+            "reveal": {
+                        "pos": "動詞",
+                        "trans": "揭示；顯示"
+            },
+            "revived": {
+                        "pos": "動詞",
+                        "trans": "復興；恢復（revive 的過去分詞）"
+            },
+            "revolving": {
+                        "pos": "動詞",
+                        "trans": "繞行；旋轉（revolve 的現在分詞）"
+            },
+            "riding": {
+                        "pos": "動詞",
+                        "trans": "騎乘（ride 的動名詞）"
+            },
+            "rising": {
+                        "pos": "形容詞/動詞",
+                        "trans": "上升的（rise 的現在分詞）"
+            },
+            "rituals": {
+                        "pos": "名詞",
+                        "trans": "儀式（ritual 的複數）"
+            },
+            "river": {
+                        "pos": "名詞",
+                        "trans": "河流"
+            },
+            "rivers": {
+                        "pos": "名詞",
+                        "trans": "河流（river 的複數）"
+            },
+            "roasted": {
+                        "pos": "形容詞/動詞",
+                        "trans": "烘焙的（roast 的過去分詞）"
+            },
+            "rock": {
+                        "pos": "名詞",
+                        "trans": "岩石"
+            },
+            "role": {
+                        "pos": "名詞",
+                        "trans": "角色；作用"
+            },
+            "rooftop": {
+                        "pos": "名詞/形容詞",
+                        "trans": "屋頂（的）"
+            },
+            "roots": {
+                        "pos": "名詞",
+                        "trans": "根源；根部（root 的複數）"
+            },
+            "routes": {
+                        "pos": "名詞",
+                        "trans": "路線（route 的複數）"
+            },
+            "routine": {
+                        "pos": "名詞",
+                        "trans": "常規；日常習慣"
+            },
+            "rovers": {
+                        "pos": "名詞",
+                        "trans": "探測車（rover 的複數）"
+            },
+            "rubber": {
+                        "pos": "名詞/形容詞",
+                        "trans": "橡膠；橡膠製的"
+            },
+            "s": {
+                        "pos": "字尾",
+                        "trans": "複數或所有格標記"
+            },
+            "sacred": {
+                        "pos": "形容詞",
+                        "trans": "神聖的"
+            },
+            "same": {
+                        "pos": "形容詞",
+                        "trans": "相同的"
+            },
+            "sanctuary": {
+                        "pos": "名詞",
+                        "trans": "聖地；保護區"
+            },
+            "saturn": {
+                        "pos": "專有名詞",
+                        "trans": "土星"
+            },
+            "save": {
+                        "pos": "動詞",
+                        "trans": "節省；拯救"
+            },
+            "say": {
+                        "pos": "動詞",
+                        "trans": "說（say no 拒絕）"
+            },
+            "schools": {
+                        "pos": "名詞",
+                        "trans": "學校（school 的複數）"
+            },
+            "scientists": {
+                        "pos": "名詞",
+                        "trans": "科學家（scientist 的複數）"
+            },
+            "screens": {
+                        "pos": "名詞",
+                        "trans": "螢幕（screen 的複數）"
+            },
+            "sea": {
+                        "pos": "名詞",
+                        "trans": "海洋"
+            },
+            "seasons": {
+                        "pos": "名詞",
+                        "trans": "季節（season 的複數）"
+            },
+            "second": {
+                        "pos": "序數/副詞",
+                        "trans": "第二；僅次於"
+            },
+            "securing": {
+                        "pos": "動詞",
+                        "trans": "確保；保護（secure 的動名詞）"
+            },
+            "seeds": {
+                        "pos": "名詞",
+                        "trans": "種子（seed 的複數）"
+            },
+            "serves": {
+                        "pos": "動詞",
+                        "trans": "作為；充當（serve 的第三人稱單數）"
+            },
+            "serving": {
+                        "pos": "動詞",
+                        "trans": "充當；作為（serve 的現在分詞）"
+            },
+            "sessions": {
+                        "pos": "名詞",
+                        "trans": "時段；期間（session 的複數）"
+            },
+            "several": {
+                        "pos": "形容詞",
+                        "trans": "數個；幾個"
+            },
+            "severe": {
+                        "pos": "形容詞",
+                        "trans": "嚴重的；劇烈的"
+            },
+            "sharpens": {
+                        "pos": "動詞",
+                        "trans": "提高；使敏銳（sharpen 的第三人稱單數）"
+            },
+            "short": {
+                        "pos": "形容詞",
+                        "trans": "短暫的；短的"
+            },
+            "show": {
+                        "pos": "動詞",
+                        "trans": "顯示；表明"
+            },
+            "significant": {
+                        "pos": "形容詞",
+                        "trans": "重大的；顯著的"
+            },
+            "simple": {
+                        "pos": "形容詞",
+                        "trans": "簡單的"
+            },
+            "sinensis": {
+                        "pos": "專有名詞",
+                        "trans": "中華的（Camellia sinensis 為茶樹學名）"
+            },
+            "single-use": {
+                        "pos": "形容詞",
+                        "trans": "一次性的"
+            },
+            "site": {
+                        "pos": "名詞",
+                        "trans": "地點；遺址"
+            },
+            "size": {
+                        "pos": "名詞",
+                        "trans": "大小；尺寸"
+            },
+            "skill": {
+                        "pos": "名詞",
+                        "trans": "技能；技巧"
+            },
+            "skills": {
+                        "pos": "名詞",
+                        "trans": "技能（skill 的複數）"
+            },
+            "sleep": {
+                        "pos": "名詞/動詞",
+                        "trans": "睡眠；睡覺"
+            },
+            "sleepwalkers": {
+                        "pos": "名詞",
+                        "trans": "夢遊者（sleepwalker 的複數）"
+            },
+            "sleepwalking": {
+                        "pos": "名詞",
+                        "trans": "夢遊"
+            },
+            "small": {
+                        "pos": "形容詞",
+                        "trans": "小的"
+            },
+            "smoother": {
+                        "pos": "形容詞",
+                        "trans": "更平穩的（smooth 的比較級）"
+            },
+            "solar": {
+                        "pos": "形容詞",
+                        "trans": "太陽的；太陽能的"
+            },
+            "sort": {
+                        "pos": "動詞",
+                        "trans": "分類"
+            },
+            "sources": {
+                        "pos": "名詞",
+                        "trans": "來源（source 的複數）"
+            },
+            "space": {
+                        "pos": "名詞",
+                        "trans": "太空；空間"
+            },
+            "spaces": {
+                        "pos": "名詞",
+                        "trans": "空間；綠地（space 的複數）"
+            },
+            "spans": {
+                        "pos": "動詞",
+                        "trans": "橫跨；全長達（span 的第三人稱單數）"
+            },
+            "spawning": {
+                        "pos": "動詞",
+                        "trans": "催生；引發（spawn 的現在分詞）"
+            },
+            "species": {
+                        "pos": "名詞",
+                        "trans": "物種（單複數同形）"
+            },
+            "spiced": {
+                        "pos": "形容詞",
+                        "trans": "加香料的"
+            },
+            "spread": {
+                        "pos": "動詞",
+                        "trans": "傳播；擴散"
+            },
+            "starting": {
+                        "pos": "動詞",
+                        "trans": "開始（start 的動名詞）"
+            },
+            "steep": {
+                        "pos": "形容詞",
+                        "trans": "陡峭的"
+            },
+            "stepping": {
+                        "pos": "名詞/形容詞",
+                        "trans": "踏腳的（stepping stones 指踏腳石）"
+            },
+            "sticks": {
+                        "pos": "動詞",
+                        "trans": "黏附（stick 的第三人稱單數）"
+            },
+            "stimulant": {
+                        "pos": "名詞",
+                        "trans": "興奮劑；提神物"
+            },
+            "stimulate": {
+                        "pos": "動詞",
+                        "trans": "刺激；激發"
+            },
+            "stomachs": {
+                        "pos": "名詞",
+                        "trans": "胃；腹部（stomach 的複數）"
+            },
+            "stone": {
+                        "pos": "名詞",
+                        "trans": "石頭"
+            },
+            "stones": {
+                        "pos": "名詞",
+                        "trans": "石頭（stone 的複數）"
+            },
+            "storage": {
+                        "pos": "名詞",
+                        "trans": "儲存；儲藏"
+            },
+            "store": {
+                        "pos": "動詞",
+                        "trans": "儲存"
+            },
+            "storing": {
+                        "pos": "動詞",
+                        "trans": "儲存（store 的動名詞）"
+            },
+            "stress": {
+                        "pos": "名詞",
+                        "trans": "壓力"
+            },
+            "stretching": {
+                        "pos": "名詞/動詞",
+                        "trans": "伸展運動"
+            },
+            "strong": {
+                        "pos": "形容詞",
+                        "trans": "強壯的；強烈的"
+            },
+            "structure": {
+                        "pos": "名詞",
+                        "trans": "結構"
+            },
+            "students": {
+                        "pos": "名詞",
+                        "trans": "學生（student 的複數）"
+            },
+            "studies": {
+                        "pos": "名詞",
+                        "trans": "研究（study 的複數）"
+            },
+            "study": {
+                        "pos": "名詞/動詞",
+                        "trans": "讀書；學習"
+            },
+            "success": {
+                        "pos": "名詞",
+                        "trans": "成功"
+            },
+            "successfully": {
+                        "pos": "副詞",
+                        "trans": "成功地"
+            },
+            "such": {
+                        "pos": "形容詞",
+                        "trans": "如此的（such as 例如）"
+            },
+            "suggest": {
+                        "pos": "動詞",
+                        "trans": "顯示；暗示；建議"
+            },
+            "sun": {
+                        "pos": "名詞",
+                        "trans": "太陽"
+            },
+            "sunlight": {
+                        "pos": "名詞",
+                        "trans": "陽光"
+            },
+            "supply": {
+                        "pos": "名詞/動詞",
+                        "trans": "供應；補給"
+            },
+            "supports": {
+                        "pos": "動詞",
+                        "trans": "孕育；支持（support 的第三人稱單數）"
+            },
+            "surface": {
+                        "pos": "名詞",
+                        "trans": "表面"
+            },
+            "surroundings": {
+                        "pos": "名詞",
+                        "trans": "周圍環境"
+            },
+            "sustainable": {
+                        "pos": "形容詞",
+                        "trans": "永續的；可持續的"
+            },
+            "swell": {
+                        "pos": "動詞",
+                        "trans": "膨脹；腫脹"
+            },
+            "swings": {
+                        "pos": "名詞",
+                        "trans": "波動（mood swings 指情緒波動）"
+            },
+            "synthetic": {
+                        "pos": "形容詞",
+                        "trans": "合成的；人造的"
+            },
+            "system": {
+                        "pos": "名詞",
+                        "trans": "系統"
+            },
+            "taking": {
+                        "pos": "動詞",
+                        "trans": "採取；進行（take 的動名詞）"
+            },
+            "tanks": {
+                        "pos": "名詞",
+                        "trans": "儲藏罐；水箱（tank 的複數）"
+            },
+            "tasks": {
+                        "pos": "名詞",
+                        "trans": "任務（task 的複數）"
+            },
+            "tea": {
+                        "pos": "名詞",
+                        "trans": "茶"
+            },
+            "techniques": {
+                        "pos": "名詞",
+                        "trans": "技術（technique 的複數）"
+            },
+            "telescopes": {
+                        "pos": "名詞",
+                        "trans": "望遠鏡（telescope 的複數）"
+            },
+            "temperatures": {
+                        "pos": "名詞",
+                        "trans": "溫度（temperature 的複數）"
+            },
+            "terrestrial": {
+                        "pos": "形容詞",
+                        "trans": "類地的；陸地的"
+            },
+            "text": {
+                        "pos": "名詞",
+                        "trans": "文字；文本"
+            },
+            "textile": {
+                        "pos": "名詞/形容詞",
+                        "trans": "紡織（的）"
+            },
+            "th": {
+                        "pos": "字尾",
+                        "trans": "序數詞尾（如 19th 第十九）"
+            },
+            "than": {
+                        "pos": "連接詞/介系詞",
+                        "trans": "比；而非"
+            },
+            "that": {
+                        "pos": "連接詞/代名詞",
+                        "trans": "那個；引導子句"
+            },
+            "the": {
+                        "pos": "冠詞",
+                        "trans": "這；那（定冠詞）"
+            },
+            "their": {
+                        "pos": "代名詞",
+                        "trans": "他們的；牠們的"
+            },
+            "these": {
+                        "pos": "代名詞/形容詞",
+                        "trans": "這些"
+            },
+            "they": {
+                        "pos": "代名詞",
+                        "trans": "他們；牠們；它們"
+            },
+            "thick": {
+                        "pos": "形容詞",
+                        "trans": "濃厚的；厚的"
+            },
+            "thinking": {
+                        "pos": "名詞/動詞",
+                        "trans": "思維；思考"
+            },
+            "this": {
+                        "pos": "代名詞/形容詞",
+                        "trans": "這個"
+            },
+            "thomas": {
+                        "pos": "專有名詞",
+                        "trans": "湯瑪斯（人名）"
+            },
+            "thousands": {
+                        "pos": "名詞/數詞",
+                        "trans": "數千"
+            },
+            "threatens": {
+                        "pos": "動詞",
+                        "trans": "威脅（threaten 的第三人稱單數）"
+            },
+            "through": {
+                        "pos": "介系詞",
+                        "trans": "透過；穿過"
+            },
+            "throughout": {
+                        "pos": "介系詞",
+                        "trans": "遍及；貫穿"
+            },
+            "thrown": {
+                        "pos": "動詞",
+                        "trans": "丟棄（throw 的過去分詞）"
+            },
+            "tim": {
+                        "pos": "專有名詞",
+                        "trans": "提姆（人名）"
+            },
+            "time": {
+                        "pos": "名詞",
+                        "trans": "時間"
+            },
+            "times": {
+                        "pos": "名詞",
+                        "trans": "次；倍（time 的複數）"
+            },
+            "tires": {
+                        "pos": "名詞",
+                        "trans": "輪胎（tire 的複數）"
+            },
+            "tissues": {
+                        "pos": "名詞",
+                        "trans": "身體組織（tissue 的複數）"
+            },
+            "to": {
+                        "pos": "介系詞/不定詞",
+                        "trans": "到；向；為了"
+            },
+            "today": {
+                        "pos": "副詞/名詞",
+                        "trans": "如今；今天"
+            },
+            "together": {
+                        "pos": "副詞",
+                        "trans": "一起；共同"
+            },
+            "tons": {
+                        "pos": "名詞",
+                        "trans": "噸（ton 的複數）"
+            },
+            "tools": {
+                        "pos": "名詞",
+                        "trans": "工具（tool 的複數）"
+            },
+            "tourists": {
+                        "pos": "名詞",
+                        "trans": "遊客（tourist 的複數）"
+            },
+            "toxic": {
+                        "pos": "形容詞",
+                        "trans": "有毒的"
+            },
+            "toxins": {
+                        "pos": "名詞",
+                        "trans": "毒素（toxin 的複數）"
+            },
+            "traces": {
+                        "pos": "動詞",
+                        "trans": "追溯（trace 的第三人稱單數）"
+            },
+            "trade": {
+                        "pos": "名詞/動詞",
+                        "trans": "貿易；交易"
+            },
+            "train": {
+                        "pos": "動詞",
+                        "trans": "訓練"
+            },
+            "transform": {
+                        "pos": "動詞",
+                        "trans": "改變；轉變"
+            },
+            "transformed": {
+                        "pos": "動詞",
+                        "trans": "改變了（transform 的過去分詞）"
+            },
+            "transitioning": {
+                        "pos": "動詞",
+                        "trans": "轉型；過渡（transition 的動名詞）"
+            },
+            "translate": {
+                        "pos": "動詞",
+                        "trans": "翻譯"
+            },
+            "transplanted": {
+                        "pos": "動詞",
+                        "trans": "移植（transplant 的過去分詞）"
+            },
+            "transportation": {
+                        "pos": "名詞",
+                        "trans": "交通工具；運輸"
+            },
+            "trash": {
+                        "pos": "名詞",
+                        "trans": "垃圾"
+            },
+            "trends": {
+                        "pos": "名詞",
+                        "trans": "趨勢；潮流（trend 的複數）"
+            },
+            "trendy": {
+                        "pos": "形容詞",
+                        "trans": "時髦的；流行的"
+            },
+            "tropical": {
+                        "pos": "形容詞",
+                        "trans": "熱帶的"
+            },
+            "turbines": {
+                        "pos": "名詞",
+                        "trans": "渦輪機（turbine 的複數）"
+            },
+            "turtles": {
+                        "pos": "名詞",
+                        "trans": "海龜；烏龜（turtle 的複數）"
+            },
+            "twenty": {
+                        "pos": "數詞",
+                        "trans": "二十"
+            },
+            "unaware": {
+                        "pos": "形容詞",
+                        "trans": "未察覺的；不知道的"
+            },
+            "underwater": {
+                        "pos": "形容詞/副詞",
+                        "trans": "水下的；在水底"
+            },
+            "unesco": {
+                        "pos": "專有名詞",
+                        "trans": "聯合國教科文組織"
+            },
+            "unfortunately": {
+                        "pos": "副詞",
+                        "trans": "不幸地"
+            },
+            "unique": {
+                        "pos": "形容詞",
+                        "trans": "獨特的"
+            },
+            "unmanned": {
+                        "pos": "形容詞",
+                        "trans": "無人的；無人駕駛的"
+            },
+            "unnecessary": {
+                        "pos": "形容詞",
+                        "trans": "不必要的"
+            },
+            "until": {
+                        "pos": "連接詞/介系詞",
+                        "trans": "直到"
+            },
+            "up": {
+                        "pos": "副詞",
+                        "trans": "向上；結束（end up 最終成為）"
+            },
+            "upper": {
+                        "pos": "形容詞",
+                        "trans": "高層的；上部的"
+            },
+            "uranus": {
+                        "pos": "專有名詞",
+                        "trans": "天王星"
+            },
+            "urban": {
+                        "pos": "形容詞",
+                        "trans": "城市的；都市的"
+            },
+            "urgent": {
+                        "pos": "形容詞",
+                        "trans": "緊急的"
+            },
+            "use": {
+                        "pos": "動詞/名詞",
+                        "trans": "使用"
+            },
+            "used": {
+                        "pos": "動詞",
+                        "trans": "被使用（use 的過去分詞）"
+            },
+            "using": {
+                        "pos": "動詞",
+                        "trans": "使用（use 的動名詞/現在分詞）"
+            },
+            "vaccines": {
+                        "pos": "名詞",
+                        "trans": "疫苗（vaccine 的複數）"
+            },
+            "vast": {
+                        "pos": "形容詞",
+                        "trans": "龐大的；廣闊的"
+            },
+            "venus": {
+                        "pos": "專有名詞",
+                        "trans": "金星"
+            },
+            "vibrant": {
+                        "pos": "形容詞",
+                        "trans": "絢麗的；充滿活力的"
+            },
+            "visible": {
+                        "pos": "形容詞",
+                        "trans": "可見的；看得見的"
+            },
+            "vital": {
+                        "pos": "形容詞",
+                        "trans": "至關重要的"
+            },
+            "vocabulary": {
+                        "pos": "名詞",
+                        "trans": "詞彙量；單字"
+            },
+            "walk": {
+                        "pos": "名詞/動詞",
+                        "trans": "散步；步行"
+            },
+            "wall": {
+                        "pos": "名詞",
+                        "trans": "牆壁；長城"
+            },
+            "was": {
+                        "pos": "動詞",
+                        "trans": "是（is/am 的過去式）"
+            },
+            "waste": {
+                        "pos": "名詞/動詞",
+                        "trans": "浪費；廢棄物"
+            },
+            "water": {
+                        "pos": "名詞",
+                        "trans": "水"
+            },
+            "we": {
+                        "pos": "代名詞",
+                        "trans": "我們"
+            },
+            "weakened": {
+                        "pos": "形容詞/動詞",
+                        "trans": "減弱的；削弱的"
+            },
+            "web": {
+                        "pos": "名詞",
+                        "trans": "網（World Wide Web 指全球資訊網）"
+            },
+            "well-being": {
+                        "pos": "名詞",
+                        "trans": "幸福；健康"
+            },
+            "were": {
+                        "pos": "動詞",
+                        "trans": "是（are 的過去式）"
+            },
+            "when": {
+                        "pos": "連接詞/副詞",
+                        "trans": "當……時；何時"
+            },
+            "where": {
+                        "pos": "關係副詞",
+                        "trans": "在……的地方；哪裡"
+            },
+            "which": {
+                        "pos": "關係代名詞",
+                        "trans": "這件事；哪一個"
+            },
+            "while": {
+                        "pos": "連接詞",
+                        "trans": "而；當……同時"
+            },
+            "wide": {
+                        "pos": "形容詞",
+                        "trans": "廣泛的；寬闊的"
+            },
+            "widely": {
+                        "pos": "副詞",
+                        "trans": "廣泛地"
+            },
+            "wildlife": {
+                        "pos": "名詞",
+                        "trans": "野生動物"
+            },
+            "will": {
+                        "pos": "助動詞",
+                        "trans": "將會"
+            },
+            "wind": {
+                        "pos": "名詞",
+                        "trans": "風；風力"
+            },
+            "with": {
+                        "pos": "介系詞",
+                        "trans": "用；與；具有"
+            },
+            "within": {
+                        "pos": "介系詞",
+                        "trans": "在……之內"
+            },
+            "without": {
+                        "pos": "介系詞",
+                        "trans": "沒有；不"
+            },
+            "wonders": {
+                        "pos": "名詞",
+                        "trans": "奇蹟；奇觀（wonder 的複數）"
+            },
+            "work": {
+                        "pos": "動詞/名詞",
+                        "trans": "工作"
+            },
+            "work-life": {
+                        "pos": "形容詞",
+                        "trans": "工作與生活的"
+            },
+            "worker": {
+                        "pos": "名詞",
+                        "trans": "工蟻；工人"
+            },
+            "workers": {
+                        "pos": "名詞",
+                        "trans": "工人（worker 的複數）"
+            },
+            "world": {
+                        "pos": "名詞",
+                        "trans": "世界"
+            },
+            "world's": {
+                        "pos": "名詞所有格",
+                        "trans": "世界的"
+            },
+            "worldwide": {
+                        "pos": "副詞/形容詞",
+                        "trans": "全球地；世界各地的"
+            },
+            "year": {
+                        "pos": "名詞",
+                        "trans": "年"
+            },
+            "years": {
+                        "pos": "名詞",
+                        "trans": "年；數年（year 的複數）"
+            },
+            "you": {
+                        "pos": "代名詞",
+                        "trans": "你；你們"
+            },
+            "your": {
+                        "pos": "代名詞",
+                        "trans": "你的；你們的"
+            },
+            "zeus": {
+                        "pos": "專有名詞",
+                        "trans": "宙斯（古希臘神話主神）"
+            }
+};
     }
 
     lookup(rawWord) {
-        const clean = rawWord.toLowerCase().replace(/[^a-z-]/g, '');
+        const clean = rawWord.toLowerCase().replace(/[^a-z'-]/g, '').replace(/^['-]+|['-]+$/g, '');
         if (!clean) return null;
         if (this.dict[clean]) return { word: clean, ...this.dict[clean] };
 
